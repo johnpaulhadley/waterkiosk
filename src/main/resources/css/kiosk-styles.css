@@ -1,0 +1,67 @@
+/* 
+ * Kiosk Styles
+ * Task #128: Text rendering with appropriate font size and styling
+ * Task #130: Readable font, size, and color with good contrast
+ * Requirement: Message readable from 2 meters away
+ */
+
+.root-container {
+    -fx-background-color: #f5f5f5;
+    -fx-padding: 40px;
+}
+
+.message-container {
+    -fx-background-color: white;
+    -fx-border-color: #2196F3;
+    -fx-border-width: 4px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: 60px 80px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 20, 0, 0, 4);
+}
+
+/* Icon styling - Task #127: Icon integration */
+.icon-label {
+    -fx-font-size: 120px;
+    -fx-text-fill: #2196F3;
+}
+
+/* Category name styling */
+.category-label {
+    -fx-font-size: 56px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1976D2;
+    -fx-font-family: "Arial", "Helvetica", sans-serif;
+}
+
+/* Instruction text styling - Task #130: Good contrast */
+.instruction-label {
+    -fx-font-size: 40px;
+    -fx-text-fill: #212121;
+    -fx-font-family: "Arial", "Helvetica", sans-serif;
+    -fx-line-spacing: 8px;
+    -fx-text-alignment: center;
+}
+
+/* Test buttons styling - Task #131: Testing UI */
+.test-buttons {
+    -fx-padding: 20px 0 0 0;
+}
+
+.test-button {
+    -fx-font-size: 16px;
+    -fx-padding: 12px 24px;
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+}
+
+.test-button:hover {
+    -fx-background-color: #45a049;
+}
+
+.test-button:pressed {
+    -fx-background-color: #3d8b40;
+}

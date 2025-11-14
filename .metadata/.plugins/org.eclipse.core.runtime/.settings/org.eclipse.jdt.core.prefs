@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+org.eclipse.jdt.core.classpathVariable.JRE_LIB=/Applications/ASU/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.aarch64_21.0.7.v20250502-0916/jre/lib/jrt-fs.jar
+org.eclipse.jdt.core.classpathVariable.JRE_SRC=/Applications/ASU/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.aarch64_21.0.7.v20250502-0916/jre/lib/src.zip
+org.eclipse.jdt.core.classpathVariable.JRE_SRCROOT=
+org.eclipse.jdt.core.compiler.codegen.targetPlatform=21
+org.eclipse.jdt.core.compiler.compliance=21
+org.eclipse.jdt.core.compiler.release=enabled
+org.eclipse.jdt.core.compiler.source=21
+org.eclipse.jdt.core.userLibrary.JavaFXNEW=<?xml version\="1.0" encoding\="UTF-8"?>\n<userlibrary systemlibrary\="false" version\="2">\n\t<archive path\="/Users/john/Desktop/javafx-sdk-21.0.7/lib/javafx-swt.jar"/>\n\t<archive path\="/Users/john/Desktop/javafx-sdk-21.0.7/lib/javafx.base.jar"/>\n\t<archive path\="/Users/john/Desktop/javafx-sdk-21.0.7/lib/javafx.controls.jar"/>\n\t<archive path\="/Users/john/Desktop/javafx-sdk-21.0.7/lib/javafx.media.jar"/>\n\t<archive path\="/Users/john/Desktop/javafx-sdk-21.0.7/lib/javafx.graphics.jar"/>\n\t<archive path\="/Users/john/Desktop/javafx-sdk-21.0.7/lib/javafx.swing.jar"/>\n\t<archive path\="/Users/john/Desktop/javafx-sdk-21.0.7/lib/javafx.web.jar"/>\n\t<archive path\="/Users/john/Desktop/javafx-sdk-21.0.7/lib/javafx.fxml.jar"/>\n</userlibrary>\n

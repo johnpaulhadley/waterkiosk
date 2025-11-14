@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- 
+    Task #129: Text layout and positioning design
+    Task #130: Readable font, size, and color with good contrast
+-->
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.kiosk.controllers.DisposalMessageController"
+      alignment="CENTER"
+      spacing="30"
+      styleClass="root-container"
+      stylesheets="@../css/kiosk-styles.css">
+
+    <!-- Message Container (initially hidden) -->
+    <VBox fx:id="messageContainer" 
+          alignment="CENTER" 
+          spacing="20" 
+          styleClass="message-container"
+          maxWidth="800">
+        
+        <!-- Icon Display -->
+        <Label fx:id="iconLabel" 
+               styleClass="icon-label"
+               text="♻"/>
+        
+        <!-- Category Name -->
+        <Label fx:id="categoryLabel" 
+               styleClass="category-label"
+               text="Recycling"
+               wrapText="true"/>
+        
+        <!-- Instruction Text -->
+        <Label fx:id="instructionLabel" 
+               styleClass="instruction-label"
+               text="Place plastic bottles, aluminum cans, paper, and cardboard in this bin."
+               wrapText="true"/>
+    </VBox>
+
+    <!-- Test Buttons (for development/testing - Task #131) -->
+    <HBox spacing="15" alignment="CENTER" styleClass="test-buttons">
+        <Button text="Recycle" onAction="#testRecycle" styleClass="test-button"/>
+        <Button text="Landfill" onAction="#testTrash" styleClass="test-button"/>
+        <Button text="Compost" onAction="#testCompost" styleClass="test-button"/>
+    </HBox>
+
+</VBox>
