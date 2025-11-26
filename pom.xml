@@ -41,6 +41,21 @@
             <artifactId>javafx-graphics</artifactId>
             <version>${javafx.version}</version>
         </dependency>
+        
+        <!-- JavaFX Swing (needed for some image operations) -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-swing</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        
+        <!-- OpenCV with automatic native library loading -->
+        <dependency>
+            <groupId>org.openpnp</groupId>
+            <artifactId>opencv</artifactId>
+            <version>4.9.0-0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -63,6 +78,13 @@
                 <version>0.0.8</version>
                 <configuration>
                     <mainClass>com.kiosk.Main</mainClass>
+                    <commandlineArgs></commandlineArgs>
+                    <options>
+                        <option>--add-exports</option>
+                        <option>javafx.graphics/com.sun.javafx.application=ALL-UNNAMED</option>
+                        <option>--add-opens</option>
+                        <option>javafx.graphics/javafx.stage=ALL-UNNAMED</option>
+                    </options>
                 </configuration>
             </plugin>
         </plugins>

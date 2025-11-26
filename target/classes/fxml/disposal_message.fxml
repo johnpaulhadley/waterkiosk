@@ -3,12 +3,15 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
 <!-- 
-    Task #129: Text layout and positioning design
-    Task #130: Readable font, size, and color with good contrast
+    Story #19: Feedback on correct disposal
+    User Story: YOLO Integration
+    Task #413: UI states with scanning overlay
 -->
 <VBox xmlns="http://javafx.com/javafx/21"
       xmlns:fx="http://javafx.com/fxml/1"
@@ -17,6 +20,61 @@
       spacing="30"
       styleClass="root-container"
       stylesheets="@../css/kiosk-styles.css">
+
+ <!-- Live Camera Feed - Maintenance View -->
+    <VBox fx:id="cameraContainer" 
+          alignment="CENTER" 
+          spacing="10"
+          styleClass="camera-container">
+        
+        <Label text="Live Camera Feed" styleClass="camera-title"/>
+        
+        <!-- Camera Feed Display -->
+        <StackPane styleClass="camera-frame">
+            <ImageView fx:id="cameraFeedView" 
+                       fitWidth="480" 
+                       fitHeight="360"
+                       preserveRatio="true"/>
+            
+            <!-- Error Overlay (shown when camera fails) -->
+            <VBox fx:id="cameraErrorOverlay" 
+                  alignment="CENTER" 
+                  spacing="10"
+                  styleClass="camera-error-overlay"
+                  visible="false">
+                <Label text="⚠" styleClass="camera-error-icon"/>
+                <Label text="Camera Unavailable" styleClass="camera-error-text"/>
+                <Label fx:id="cameraErrorMessage" 
+                       text="Please check camera connection" 
+                       styleClass="camera-error-detail"/>
+            </VBox>
+        </StackPane>
+        
+        <!-- Camera Controls -->
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Start Feed" 
+                    onAction="#startCameraFeed" 
+                    styleClass="camera-button"/>
+            <Button text="Stop Feed" 
+                    onAction="#stopCameraFeed" 
+                    styleClass="camera-button-secondary"/>
+        </HBox>
+    </VBox>
+    
+    <!-- Scanning Overlay - Task #413 (initially hidden) -->
+    <StackPane fx:id="scanningOverlay" 
+               styleClass="scanning-overlay"
+               visible="false"
+               minHeight="200">
+        <VBox alignment="CENTER" spacing="20">
+            <Label fx:id="scanningLabel" 
+                   styleClass="scanning-title"
+                   text="Scanning..."/>
+            <Label fx:id="scanningMessageLabel" 
+                   styleClass="scanning-message"
+                   text="Hold item in front of camera"/>
+        </VBox>
+    </StackPane>
 
     <!-- Message Container (initially hidden) -->
     <VBox fx:id="messageContainer" 
@@ -43,11 +101,74 @@
                wrapText="true"/>
     </VBox>
 
-    <!-- Test Buttons (for development/testing - Task #131) -->
-    <HBox spacing="15" alignment="CENTER" styleClass="test-buttons">
-        <Button text="Recycle" onAction="#testRecycle" styleClass="test-button"/>
-        <Button text="Landfill" onAction="#testTrash" styleClass="test-button"/>
-        <Button text="Compost" onAction="#testCompost" styleClass="test-button"/>
+    <!-- Confirmation Container (initially hidden) - Story #19 -->
+    <VBox fx:id="confirmationContainer" 
+          alignment="CENTER" 
+          spacing="20" 
+          styleClass="confirmation-container"
+          maxWidth="800">
+        
+        <!-- Green Checkmark -->
+        <Label fx:id="checkmarkLabel" 
+               styleClass="checkmark-label"
+               text="✓"/>
+        
+        <!-- Confirmation Text -->
+        <Label fx:id="confirmationLabel" 
+               styleClass="confirmation-text"
+               text="Correct Disposal!"
+               wrapText="true"/>
+    </VBox>
+    
+    <!-- Model Toggle Switch -->
+    <HBox spacing="15" alignment="CENTER">
+        <Label text="ML Model:" styleClass="test-section-label"/>
+        <Button fx:id="chrisModelButton" 
+                text="Chris" 
+                onAction="#selectChrisModel" 
+                styleClass="model-button-selected"/>
+        <Button fx:id="josephModelButton" 
+                text="Joseph" 
+                onAction="#selectJosephModel" 
+                styleClass="model-button"/>
     </HBox>
+
+    <!-- Test Buttons Section -->
+    <VBox spacing="20" alignment="CENTER">
+        
+        <!-- YOLO Detection Control -->
+        <Label text="YOLO Detection:" styleClass="test-section-label"/>
+        <HBox spacing="15" alignment="CENTER" styleClass="test-buttons">
+            <Button text="▶ Start Scanning" 
+                    onAction="#startScanning" 
+                    styleClass="test-button-primary"/>
+            <Button text="⏹ Stop Scanning" 
+                    onAction="#stopScanning" 
+                    styleClass="test-button-secondary"/>
+        </HBox>
+        
+        <!-- Manual Test Buttons (Instructions Only) -->
+        <Label text="Test Instructions Only:" styleClass="test-section-label"/>
+        <HBox spacing="15" alignment="CENTER" styleClass="test-buttons">
+            <Button text="Recycle" onAction="#testRecycle" styleClass="test-button"/>
+            <Button text="Trash" onAction="#testTrash" styleClass="test-button"/>
+            <Button text="Compost" onAction="#testCompost" styleClass="test-button"/>
+            <Button text="Hazardous" onAction="#testHazardous" styleClass="test-button"/>
+        </HBox>
+
+        <!-- Story #19 Test Buttons (Instruction + Confirmation) -->
+        <Label text="Test Correct Disposal (Story #19):" styleClass="test-section-label"/>
+        <HBox spacing="15" alignment="CENTER" styleClass="test-buttons">
+            <Button text="✓ Recycle" onAction="#testCorrectRecycle" styleClass="test-button-correct"/>
+            <Button text="✓ Trash" onAction="#testCorrectTrash" styleClass="test-button-correct"/>
+            <Button text="✓ Compost" onAction="#testCorrectCompost" styleClass="test-button-correct"/>
+            <Button text="✓ Hazardous" onAction="#testCorrectHazardous" styleClass="test-button-correct"/>
+        </HBox>
+
+        <!-- Test Incorrect Disposal -->
+        <HBox spacing="15" alignment="CENTER" styleClass="test-buttons">
+            <Button text="❌ Test Incorrect" onAction="#testIncorrectDisposal" styleClass="test-button-incorrect"/>
+        </HBox>
+    </VBox>
 
 </VBox>

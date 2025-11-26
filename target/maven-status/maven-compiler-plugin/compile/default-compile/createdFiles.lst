@@ -1,0 +1,8 @@
+com/kiosk/controllers/DisposalMessageController.class
+com/kiosk/services/MessageDisplayService.class
+com/smartbin/DetectionResult.class
+com/kiosk/models/WasteCategory.class
+com/kiosk/services/CameraService.class
+com/smartbin/yolo/YoloBridge.class
+com/kiosk/Main.class
+com/kiosk/services/YoloAdapter.class

@@ -9,11 +9,8 @@ import javafx.stage.Stage;
 /**
  * Main application entry point for Waste Disposal Kiosk.
  * 
- * Acceptance Criteria:
- * - Message appears within 1 second ✓
- * - Message is readable from 2 meters away ✓ (56px+ fonts)
- * - Message lasts 3–5 seconds ✓ (configured for 4 seconds)
- * - Feedback from 5 users confirms clarity (testing required)
+ * User Story: Integrate UI with YOLO Machine Learning Model
+ * Story #19: Feedback on correct disposal
  */
 public class Main extends Application {
 
@@ -27,7 +24,7 @@ public class Main extends Application {
         Scene scene = new Scene(root, 1024, 768);
 
         // Configure stage
-        primaryStage.setTitle("Waste Disposal Kiosk");
+        primaryStage.setTitle("Waste Disposal Kiosk - YOLO Integration");
         primaryStage.setScene(scene);
         primaryStage.setResizable(true);
         
@@ -35,6 +32,13 @@ public class Main extends Application {
         // primaryStage.setFullScreen(true);
         
         primaryStage.show();
+        
+        System.out.println("[Main] Application started successfully");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("[Main] Application stopping...");
     }
 
     public static void main(String[] args) {
