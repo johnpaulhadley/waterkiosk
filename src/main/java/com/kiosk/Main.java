@@ -21,7 +21,7 @@ public class Main extends Application {
         Parent root = loader.load();
 
         // Create scene (kiosk-sized)
-        Scene scene = new Scene(root, 1024, 768);
+        Scene scene = new Scene(root, 1024, 900);
 
         // Configure stage
         primaryStage.setTitle("Waste Disposal Kiosk - YOLO Integration");

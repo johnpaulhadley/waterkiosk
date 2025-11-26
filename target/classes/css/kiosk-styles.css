@@ -117,8 +117,10 @@
     -fx-border-width: 3px;
     -fx-border-radius: 8px;
     -fx-background-radius: 8px;
-    -fx-min-width: 480px;
-    -fx-min-height: 360px;
+    -fx-min-width: 400px;
+    -fx-min-height: 300px;
+    -fx-max-width: 400px;
+    -fx-max-height: 300px;
 }
 
 /* Camera Error Overlay */
